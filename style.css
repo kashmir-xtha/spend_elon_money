@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-drag: none;  /*to make images undragabble for all browsers*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+body{
+    height: 100%;
+    width: 80%;
+    max-width: 1200px;
+    margin-inline: auto;
+    position: relative;
+}
+.header{
+    margin: 15px 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    #elonIMG{
+        height: 125px;
+        width: 170px;
+        border-radius: 30px;
+        transition: all .5s ease-out ;
+
+        &:hover{
+            border-radius: 0;
+        }
+    }
+    .easter{
+        cursor:pointer;
+
+        &:hover{
+            color: rgb(154, 46, 255);
+        }
+    }
+    .title{
+        font-family: 'Bahnschrift' !important;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+}
+.networth{
+    position: sticky;
+    cursor: pointer;
+    top:0px;
+    background: linear-gradient(180deg,#2ecc71,#1abc9c);
+    line-height: 64px;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    z-index: 99;
+}
+.itemsWrapper{
+    display: grid;
+    grid-template-columns: 32.5% 32.5% auto;
+    gap: 10px;
+    z-index: 1;
+    
+    .items{
+        padding: 20px 0;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 550;
+        cursor:pointer;
+        transition: transform .1s ease-in-out;
+
+        &:active{transform: scale(.975);}
+        .price{color: #00a767;}
+    }
+}
+.footer{
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 600;
+}
+@media (max-width:990px){
+    body{width: 90%;}
+}
+@media (max-width:882px){
+    .itemsWrapper{grid-template-columns: 49% auto;}
+}
+@media (max-width:600px){ /*for small range devices like phones,android*/
+    body{width:95%;}
+    .title{font-size: 2rem;}
+    .networth{font-size: 24px;}
+    .items{font-size: 18px;}
+}
+@media (max-width:550px){
+    .itemsWrapper{grid-template-columns: auto;}
+}
